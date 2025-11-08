@@ -1,0 +1,11 @@
+.filepond--list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.filepond--item {
+  width: 150px;
+}

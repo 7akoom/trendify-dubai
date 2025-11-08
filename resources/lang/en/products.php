@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'Products List' => 'Products List',
+    'Name' => 'Name',
+    'Category' => 'Category',
+    'Features' => 'Features',
+    'ProCount' => 'Products number',
+    'AddNPro' => 'Add new product',
+    'ChCat' => 'Choose category',
+    'Discount' => 'Discount',
+    'New' => 'New',
+    'Qty' => 'Quantity',
+    'PurPrice' => 'Purchase price',
+    'SaPrice' => 'Sale price',
+    'DisPrice' => 'Discount price',
+    'Img' => 'Image',
+    'FImg' => 'Featured Image',
+    'IsVar' => 'Does the product have variants?',
+    'Yes' => 'Yes',
+    'No' => 'No',
+    'ProCol' => 'Product colors',
+    'ProSi' => 'Product sizes',
+    'ChCol' => 'Choose color',
+    'ChSi' => 'Choose size',
+    'EditPro' => 'Edit product',
+    'Discription' => 'Discription',
+];
