@@ -80,4 +80,11 @@ return [
     'Do you want to login or continue as guest?' => 'هل تريد تسجيل الدخول أم المتابعة كزائر؟',
     'Login' => 'تسجيل الدخول',
     'Continue as Guest' => 'المتابعة كزائر',
+    'Payment_info' => 'معلومات الدفع',
+    'credit_card' => 'بطاقة الائتمان',
+    'cache' => 'كاش',
+    'Cardholder Name' => 'اسم حامل البطاقة',
+    'Card Number' => 'رقم البطاقة',
+    'Expiration' => 'انتهاء الصلاحية',
+    'CVC/CVV' => 'كود التحقق من البطاقة'
 ];

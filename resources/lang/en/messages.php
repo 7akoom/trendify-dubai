@@ -71,4 +71,11 @@ return [
     'Do you want to login or continue as guest?' => 'Do you want to login or continue as guest?',
     'Login' => 'Sign in',
     'Continue as Guest' => 'Continue as Guest',
+    'Payment_info' => 'Payment Info',
+    'credit_card' => 'Credit Card',
+    'cache'   => 'Cache',
+    'Cardholder Name' => 'Cardholder Name',
+    'Card Number' => 'Card Number',
+    'Expiration' => 'Expiration',
+    'CVC/CVV' => 'CVC/CVV'
 ];
