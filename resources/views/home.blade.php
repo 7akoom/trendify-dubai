@@ -12,7 +12,21 @@
 <section class="hero">
     <div class="hero__slider owl-carousel">
         @foreach ($banners as $ban)
-        <div class="hero__items set-bg" data-setbg="{{ asset("storage/".$ban->images->path) }}">
+        @php
+        $img =  $ban->images;
+       
+        @endphp
+        @if($img)
+        @php
+        $image = $img->first();
+        @endphp
+        @else 
+         @php
+        $image = '';
+        @endphp
+        @endif
+        <div class="hero__items set-bg"  data-setbg="{{ $image ? asset('storage/' . $image->path) : asset('default.png') }}">
+
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-7 col-md-8">

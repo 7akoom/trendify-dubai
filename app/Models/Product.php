@@ -4,10 +4,12 @@ namespace App\Models;
 
 use App\Traits\HasStatus;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
     use HasStatus;
+    use HasFactory;
 
     protected $preventLazyLoading = true;
 

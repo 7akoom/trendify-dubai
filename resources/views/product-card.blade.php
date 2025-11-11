@@ -29,10 +29,10 @@
             <h6>{{$pro->name}}</h6>
             <a href="#" data-id="{{$pro->id}}" class="add-cart">+ أضف إلى السلة</a>
             @if ($pro->is_featured)
-                <h5>{{ $pro->price->discount_price }}</h5>
-                <span style="text-decoration: line-through;">{{ $pro->price->sale_price }}</span>
+                <h5>{{ $pro->price->discount_price ?? 1}}</h5>
+                <span style="text-decoration: line-through;">{{ $pro->price->sale_price ?? ''}}</span>
             @else
-                <h5>{{ $pro->price->sale_price }}</h5>
+                <h5>{{ $pro->price->sale_price ?? '' }}</h5>
             @endif
 
             <div class="product__color__select">
