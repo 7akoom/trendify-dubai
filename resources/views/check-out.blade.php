@@ -145,17 +145,15 @@
 
                         <div class="row">
                             <div class="form-check col-12">
-                                <input class="form-check-input" type="radio" id="credit_card" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1" value='credit_card'>
+                                <input class="form-check-input" type="radio" id="credit_card" name="payment_method" value="credit_card">
+                                <label class="form-check-label" for="credit_card">
                                     {{__('messages.credit_card')}}
                                 </label>
                             </div>
-                            </br>
+
                             <div class="form-check col-12">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2" checked>
-                                <label class="form-check-label" for="flexRadioDefault2" value="cache">
+                                <input class="form-check-input" type="radio" id="cache" name="payment_method" value="cache" checked>
+                                <label class="form-check-label" for="cache">
                                     {{__('messages.cache')}}
                                 </label>
                             </div>
