@@ -84,4 +84,14 @@ class Order extends Model
     {
         return $this->hasMany(OrderDetails::class);
     }
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
+    }
+
+    public function hasSuccessfulPayment(): bool
+    {
+        return $this->payment && $this->payment->isSuccessful();
+    }
 }

@@ -86,5 +86,14 @@ return [
     'Cardholder Name' => 'اسم حامل البطاقة',
     'Card Number' => 'رقم البطاقة',
     'Expiration' => 'انتهاء الصلاحية',
-    'CVC/CVV' => 'كود التحقق من البطاقة'
+    'CVC/CVV' => 'كود التحقق من البطاقة',
+    'payment_method' => 'طريقة الدفع',
+    'cash' => 'الدفع عند الاستلام',
+    'credit_card' => 'البطاقة الائتمانية',
+    'payment_notice' => 'ملاحظة:',
+    'payment_redirect' => 'سيتم تحويلك إلى بوابة الدفع الآمنة (N-Genius) لإتمام عملية الدفع بشكل آمن.',
+    'proceed_to_payment' => 'المتابعة للدفع',
+    'processing' => 'جاري المعالجة...',
+    'redirecting_to_payment' => 'جاري التحويل لبوابة الدفع الآمنة...',
+    'please_fill_required' => 'الرجاء ملء جميع الحقول المطلوبة',
 ];

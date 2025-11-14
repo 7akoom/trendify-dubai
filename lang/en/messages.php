@@ -77,5 +77,14 @@ return [
     'Cardholder Name' => 'Cardholder Name',
     'Card Number' => 'Card Number',
     'Expiration' => 'Expiration',
-    'CVC/CVV' => 'CVC/CVV'
+    'CVC/CVV' => 'CVC/CVV',
+    'payment_method' => 'payment method',
+    'cash' => 'cash on delivery',
+    'credit_card' => 'credit card',
+    'payment_notice' => 'Note:',
+    'payment_redirect' => 'You will be transferred to the secure payment gateway (N-Genius) to complete the payment process securely.',
+    'proceed_to_payment' => 'proceed to payment',
+    'processing' => 'Processing...',
+    'redirecting_to_payment' => 'Redirecting to a secure payment gateway...',
+    'please_fill_required' => 'Please fill in all required fields',
 ];
