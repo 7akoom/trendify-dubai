@@ -64,10 +64,10 @@ class Cart extends Model
         return $this->hasOneThrough(
             Image::class,
             Product::class,
-            'id', // Product.id
-            'imageable_id', // Image.imageable_id
-            'product_id', // Cart.product_id
-            'id' // Product.id
+            'id',
+            'imageable_id',
+            'product_id',
+            'id'
         )->where('images.imageable_type', Product::class)
             ->where('images.is_featured', 1);
     }

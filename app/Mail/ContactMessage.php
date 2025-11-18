@@ -1,6 +1,5 @@
 <?php
 
-// app/Mail/ContactMessage.php
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;

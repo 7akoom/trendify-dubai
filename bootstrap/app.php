@@ -20,7 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
         $middleware->validateCsrfTokens(except: [
             'payment/webhook',
-            'payment/*', // أو هذا إذا بدك تستثني كل payment routes
+            'payment/*',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

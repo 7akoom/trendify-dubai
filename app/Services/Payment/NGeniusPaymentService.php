@@ -60,53 +60,6 @@ class NGeniusPaymentService
         }
     }
 
-    // private function getAccessToken(): ?string
-    // {
-    //     try {
-    //         // استخدم Guzzle مباشرة للتحكم الكامل
-    //         $client = new \GuzzleHttp\Client([
-    //             'base_uri' => $this->apiUrl,
-    //             'verify' => false,
-    //             'timeout' => 30
-    //         ]);
-
-    //         $response = $client->request('POST', '/identity/auth/access-token', [
-    //             'headers' => [
-    //                 'Authorization' => 'Basic ' . $this->apiKey,
-    //                 'Content-Type' => 'application/vnd.ni-identity.v1+json',
-    //                 'Accept' => 'application/vnd.ni-identity.v1+json'
-    //             ],
-    //             'json' => [] // empty body أو ['realm' => $this->outletReference]
-    //         ]);
-
-    //         $body = json_decode($response->getBody()->getContents(), true);
-
-    //         if (isset($body['access_token'])) {
-    //             Log::info('✅ Token received via Guzzle!');
-    //             return $body['access_token'];
-    //         }
-
-    //         Log::error('No access token in response', $body);
-    //         return null;
-    //     } catch (\GuzzleHttp\Exception\ClientException $e) {
-    //         $response = $e->getResponse();
-    //         $body = $response ? $response->getBody()->getContents() : 'No response body';
-
-    //         Log::error('Guzzle Client Error', [
-    //             'status' => $response ? $response->getStatusCode() : 'unknown',
-    //             'body' => $body
-    //         ]);
-
-    //         return null;
-    //     } catch (\Exception $e) {
-    //         Log::error('Guzzle Exception: ' . $e->getMessage());
-    //         return null;
-    //     }
-    // }
-
-    /**
-     * Create Payment Order
-     */
     public function createPaymentOrder(Order $order): ?array
     {
         $accessToken = $this->getAccessToken();
