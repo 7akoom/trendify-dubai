@@ -210,7 +210,7 @@
                                     <!-- Cash on Delivery -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" id="cash" 
-                                            name="payment_method" value="cash" checked>
+                                            name="payment_method" value="cash">
                                         <label class="form-check-label" for="cash">
                                             <i class="fas fa-money-bill-wave me-2"></i>
                                             {{__('messages.cash') ?? 'الدفع عند الاستلام'}}
@@ -220,7 +220,7 @@
                                     <!-- Online Payment -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" id="online" 
-                                            name="payment_method" value="online">
+                                            name="payment_method" value="online" checked>
                                         <label class="form-check-label" for="online">
                                             {{__('messages.credit_card') ?? 'البطاقة الائتمانية'}}
                                         </label>
