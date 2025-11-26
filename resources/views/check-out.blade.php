@@ -79,7 +79,7 @@
                         <hr>
                         <br>
                         <div class="form-check mb-4">
-                            <input class="form-check-input" type="checkbox" id="sameAsBilling">
+                            <input class="form-check-input" type="checkbox" id="sameAsBilling" checked>
                             <label class="form-check-label" for="sameAsBilling">
                                 {{ __('messages.SameAsBilling') ?? 'نفس تفاصيل الدفع' }}
                             </label>
@@ -181,29 +181,42 @@
         </div>
     </div>
 </section>
-<!-- Checkout Section End -->
 
 @endsection
 
 @section('script')
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const checkbox = document.getElementById('sameAsBilling');
+document.addEventListener("DOMContentLoaded", function () {
+    const checkbox = document.getElementById('sameAsBilling');
+    const fields = ['first_name', 'last_name', 'street_address', 'city', 'state', 'country', 'postal_code', 'phone', 'email'];
 
-        checkbox.addEventListener('change', function () {
-            const fields = ['first_name', 'last_name', 'street_address', 'city', 'state', 'country', 'postal_code', 'phone', 'email'];
-
+    function syncFields() {
+        if (checkbox.checked) {
             fields.forEach(field => {
                 const billing = document.querySelector(`[name="addr[billing][${field}]"]`);
                 const shipping = document.querySelector(`[name="addr[shipping][${field}]"]`);
-
-                if (checkbox.checked) {
-                    shipping.value = billing.value;
-                } else {
-                    shipping.value = '';
-                }
+                shipping.value = billing.value;
             });
-        });
+        }
+    }
+
+    syncFields();
+
+    fields.forEach(field => {
+        const billing = document.querySelector(`[name="addr[billing][${field}]"]`);
+        billing.addEventListener('input', syncFields);
     });
+
+    checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+            syncFields();
+        } else {
+            fields.forEach(field => {
+                document.querySelector(`[name="addr[shipping][${field}]"]`).value = '';
+            });
+        }
+    });
+});
 </script>
+
 @endsection
