@@ -143,7 +143,7 @@
                         <hr>
                         <br>
                         <div class="form-check mb-4">
-                            <input class="form-check-input" type="checkbox" id="sameAsBilling">
+                            <input class="form-check-input" type="checkbox" id="sameAsBilling" checked>
                             <label class="form-check-label" for="sameAsBilling">
                                 {{ __('messages.SameAsBilling') ?? 'نفس تفاصيل الدفع' }}
                             </label>
