@@ -29,7 +29,6 @@ class StoreProductRequest extends FormRequest
             'has_variants'   => ['boolean'],
         ];
 
-        // في حال وجود متغيرات، نسمح بإرسال أي تركيبة من الألوان والمقاسات أو حتى تركهم فارغين
         if ($this->boolean('has_variants')) {
             $rules['colors'] = ['nullable', 'array'];
             $rules['colors.*.color_id'] = ['nullable', 'exists:colors,id'];

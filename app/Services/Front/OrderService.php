@@ -22,7 +22,7 @@ class OrderService
         try {
             $order = Order::create([
                 'user_id' => Auth::id(),
-                'payment_method' => 'cod',
+                'payment_method' => $data['payment_method'],
                 'discount' => $data['discount'] ?? null,
                 'total' => $data['total'],
                 'notes' => $data['notes'] ?? null,

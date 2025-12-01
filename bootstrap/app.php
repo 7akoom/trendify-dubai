@@ -18,6 +18,10 @@ return Application::configure(basePath: dirname(__DIR__))
             'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
             'auth' => \App\Http\Middleware\AuthMiddleware::class,
         ]);
+        $middleware->validateCsrfTokens(except: [
+            'payment/webhook',
+            'payment/*',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

@@ -22,7 +22,8 @@ use App\Http\Controllers\Front\{
     CheckoutController,
     ContactController,
     ForgotPasswordController,
-    ResetPasswordController
+    ResetPasswordController,
+    PaymentController
 };
 
 Route::controller(HomeController::class)
@@ -98,6 +99,18 @@ Route::middleware('guest:web')->group(function () {
             Route::get('/reset-password/{token}', 'showResetForm')->name('password.reset');
             Route::post('/reset-password', 'reset')->name('password.update');
         });
+
+    Route::controller(PaymentController::class)->group(function () {
+        Route::get('/payment/callback', 'callback')->name('payment.callback');
+        Route::post('/payment/webhook', 'webhook')->name('payment.webhook');
+        Route::get('/payment/status/{reference}', 'status')->name('payment.status');
+    });
+});
+
+Route::get('/test-ng', function () {
+    $service = new \App\Services\Payment\NGeniusPaymentService();
+
+    return $service->getAccessToken();
 });
 
 

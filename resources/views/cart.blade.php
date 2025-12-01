@@ -18,7 +18,7 @@
                         </thead>
                         <tbody>
                             @foreach ($carts as $item)
-                            <tr data-id="{{ $item->id }}" data-unit-price="{{ $item->product->is_featured ? $item->product->price->discount_price : $item->product->price->sale_price }}">
+                            <tr data-id="{{ $item->id }}" data-unit-price="{{ $item->product->is_featured ? $item->product->price->discount_price ?? 1 : $item->product->price->sale_price }}">
                                 <td class="product__cart__item">
                                     <div class="product__cart__item__pic">
                                         <img src="{{ asset("storage/".$item->featuredImage?->path) }}"
@@ -28,7 +28,7 @@
                                     <div class="product__cart__item__text">
                                         <h6>{{$item->product->name}}</h6>
                                         @if ($item->product->is_featured)
-                                        <h5>{{$item->product->price->discount_price}}</h5>
+                                        <h5>{{$item->product->price->discount_price ?? 1}}</h5>
                                         @else
                                         <h5>{{$item->product->price->sale_price}}</h5>
                                         @endif
@@ -42,7 +42,7 @@
                                     </div>
                                 </td>
                                 <td class="cart__price">
-                                    {{ $item->qty * ($item->product->is_featured ? $item->product->price->discount_price : $item->product->price->sale_price) }}
+                                    {{ $item->qty * ($item->product->is_featured ? $item->product->price->discount_price ?? 1 : $item->product->price->sale_price) }}
                                 </td>                                
                                 <td class="cart__close">
                                     <a href="javascript:void(0)" class="remove-item" data-id="{{$item->id}}">

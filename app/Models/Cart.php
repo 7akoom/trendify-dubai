@@ -8,10 +8,12 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Cart extends Model
 {
     use HasUuids;
+    use HasFactory;
 
     protected $keyType = 'string';
     public $incrementing = false;
@@ -62,10 +64,10 @@ class Cart extends Model
         return $this->hasOneThrough(
             Image::class,
             Product::class,
-            'id', // Product.id
-            'imageable_id', // Image.imageable_id
-            'product_id', // Cart.product_id
-            'id' // Product.id
+            'id',
+            'imageable_id',
+            'product_id',
+            'id'
         )->where('images.imageable_type', Product::class)
             ->where('images.is_featured', 1);
     }
